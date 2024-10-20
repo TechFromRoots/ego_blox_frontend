@@ -3,7 +3,7 @@ import React, { useState } from "react";
 const Button = ({ styles, text, onClick }) => (
   <button
     type="button"
-    className={`py-6 px-20 justify-between font-poppins font-bold text-[16px] text-primary rounded-[10px] outline-none ${styles}`}
+    className={`py-6 px-20 font-poppins font-medium text-[18px] text-primary rounded-[10px] outline-none ${styles}`}
     onClick={onClick}
   >
     {text}
@@ -11,7 +11,7 @@ const Button = ({ styles, text, onClick }) => (
 );
 
 const ButtonGroup = () => {
-  const [buttonText, setButtonText] = useState("Get USSD");
+  const [buttonText, setButtonText] = useState("Get USSD  ");
   const [buttonColor, setButtonColor] = useState("bg-orange-500");
 
   const handleCopyToClipboard = () => {
@@ -33,14 +33,14 @@ const ButtonGroup = () => {
   };
 
   return (
-    <div className="mt-10 flex flex-wrap justify-center md:justify-start gap-12">
+    <div className="mt-10 flex flex-wrap justify-start md:justify-start gap-20 space-x-28">
       <Button
-        styles="bg-green-500 w-auto md:w-[150px] lg:w-[180px]"
+        styles={`whitespace-nowrap bg-green-500 md:w-[150px] lg:w-[180px]`}
         text="Get Bot"
         onClick={() => window.location.href = "https://t.me/egoblox_bot"}
       />
       <Button
-        styles={`${buttonColor} w-auto md:w-[150px] lg:w-[180px]`}
+        styles={`whitespace-nowrap ${buttonColor} md:w-[150px] lg:w-[180px]`}
         text={buttonText}
         onClick={handleCopyToClipboard}
       />
